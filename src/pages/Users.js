@@ -17,14 +17,13 @@ const Users = () => {
       dispatch(clearUserPostList());
     };
   }, [dispatch]);
-  console.log(userPostList)
- 
+
   const name = "Users"
 
   const exampleData = userPostList.map((a)=>{
     const {id, Post, UserName, Image, Job} = a
-    const Photo = `<img src={${Image}}></img>`
-    return {id, UserName, Photo, Job, Post}
+    // const Photo = <img alt="photo">{Image}</img>
+    return {id, UserName, Image, Job, Post}
   })
 
   return (

@@ -22,33 +22,41 @@ const TableTemplate = ({ exampleData }) => {
         setPage(0);
     };
     const keys = Object.keys(exampleData[0])
-    console.log(keys)
-    console.log(exampleData)
     return (
-        <Paper sx={{ width: '75%',marginLeft:"18rem", marginTop:"3rem"}}>
+        <Paper sx={{ width: '75%', marginLeft: "18rem", marginTop: "3rem" }}>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
-                        <TableRow sx={{backgroundColor:"lightgray"}}>
-                            {keys.map((column) => {
-                                return <TableCell sx={{fontWeight:"bolder"}}>{column}</TableCell>
+                        <TableRow sx={{ backgroundColor: "lightgray" }}>
+                            {keys.map((column, index) => {
+                                return <TableCell key={index} sx={{ fontWeight: "bolder" }}>{column}</TableCell>
                             })}
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {exampleData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => {
-                            
+
                             return (
-                                
+
                                 <TableRow
                                     key={index}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
-                                    {keys.map((cell) => {
-                                        
-                                        return <TableCell component="th" scope="row">
-                                                    {row[cell]}
-                                                </TableCell>
+                                    {keys.map((cell, index) => {
+                                        if (cell === "Image") {
+
+                                            return <TableCell key={index} component="th" scope="row">
+                                                <img src={row[cell]} alt="" style={{height:"2rem", width:"2rem", borderRadius:"50%"}}/>
+                                            </TableCell>
+                                        } else {
+
+                                            return <TableCell key={index} component="th" scope="row">
+                                                {row[cell]}
+                                                
+                                            </TableCell>
+                                        }
+
+
 
                                     })}
                                 </TableRow>

@@ -56,7 +56,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-
 const Header = ({ name }) => {
   const { user } = useSelector((state) => state.auth);
 
@@ -175,7 +174,6 @@ const Header = ({ name }) => {
           <Box sx={{ flexGrow: 1 }} />
           <span style={{color:"black"}}>{user.email}</span>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
                 <MailIcon sx={{color:"black"}}/>
@@ -199,8 +197,6 @@ const Header = ({ name }) => {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-
-              
               <img src={photo} alt="" style={{height:"2rem", width:"2rem", borderRadius:"50%"}}/>
             </IconButton>
           </Box>

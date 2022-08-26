@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../components/Header';
-import Sidebar from '../components/sidebar/Sidebar';
+import Sidebar from '../components/Sidebar';
 import TableTemplate from '../components/TableTemplate';
 import { getUserPost, clearUserPostList } from "../features/user-post/userPostSlice"
 import loadingGif from "../assets/loading.gif"

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import TableTemplate from '../components/TableTemplate';
 import { getUserPost, clearUserPostList } from "../features/user-post/userPostSlice"
 import Header from '../components/Header';
-import Sidebar from '../components/sidebar/Sidebar';
+import Sidebar from '../components/Sidebar';
 import loadingGif from "../assets/loading.gif"
 import { Box } from '@mui/system';
 
@@ -22,7 +22,6 @@ const Users = () => {
 
   const exampleData = userPostList.map((a)=>{
     const {id, Post, UserName, Image, Job} = a
-    // const Photo = <img alt="photo">{Image}</img>
     return {id, UserName, Image, Job, Post}
   })
 

@@ -35,29 +35,21 @@ const TableTemplate = ({ exampleData }) => {
                     </TableHead>
                     <TableBody>
                         {exampleData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => {
-
                             return (
-
                                 <TableRow
                                     key={index}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
                                     {keys.map((cell, index) => {
                                         if (cell === "Image") {
-
                                             return <TableCell key={index} component="th" scope="row">
-                                                <img src={row[cell]} alt="" style={{height:"2rem", width:"2rem", borderRadius:"50%"}}/>
-                                            </TableCell>
+                                                        <img src={row[cell]} alt="" style={{ height: "2rem", width: "2rem", borderRadius: "50%" }} />
+                                                    </TableCell>
                                         } else {
-
                                             return <TableCell key={index} component="th" scope="row">
-                                                {row[cell]}
-                                                
-                                            </TableCell>
+                                                        {row[cell]}
+                                                    </TableCell>
                                         }
-
-
-
                                     })}
                                 </TableRow>
                             )
@@ -78,5 +70,4 @@ const TableTemplate = ({ exampleData }) => {
         </Paper>
     )
 }
-
 export default TableTemplate

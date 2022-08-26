@@ -61,9 +61,11 @@ export default function LogIn() {
     e.preventDefault();
     if (!validEmail.test(email)) {
       setEmailErr(true);
+      setEmail("")
     }
     if (!validPassword.test(password)) {
       setPwdError(true);
+      setPassword("")
     }
     if (validEmail.test(email) && validPassword.test(password)) {
       dispatch(setUser({ email, password }));
@@ -194,9 +196,10 @@ export default function LogIn() {
                   borderRadius: "10px",
                   // marginBottom: "1.2rem"
                 }}
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              {emailErr && <p style={{ marginTop: 0, color: "red", fontSize:"0.8rem" }}>Your email is invalid</p>}
+              {emailErr && <p style={{ marginTop: 0, color: "red", fontSize:"0.8rem" }}>Your email is invalid. Sample format: example@example.com</p>}
               <div
                 style={{
                   display: "flex",
@@ -243,6 +246,7 @@ export default function LogIn() {
                     borderRadius: "4px",
                     // marginBottom: "1.2rem"
                   }}
+                  value={password}
                   placeholder="Password"
                   id="outlined-adornment-password"
                   type={password.showPassword ? "text" : "password"}
@@ -261,7 +265,7 @@ export default function LogIn() {
                   }
                 />
               </FormControl>
-              {pwdError && <p style={{ marginTop: 0, color: "red", fontSize:"0.8rem"}}>Your password is invalid</p>}
+              {pwdError && <p style={{ marginTop: 0, color: "red", fontSize:"0.8rem"}}>Password must contain both letters and numbers.(min 6 char)</p>}
             </div>
           <Button
             fullWidth

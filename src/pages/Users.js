@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import loadingGif from "../assets/loading.gif"
 import { Box } from '@mui/system';
+import "./UsersStyle.css"
 
 const Users = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,8 @@ const Users = () => {
 
   const exampleData = userPostList.map((a)=>{
     const {id, Post, UserName, Image, Job} = a
-    return {id, UserName, Image, Job, Post}
+    const Picture = Image
+    return {id, UserName, Picture, Job, Post}
   })
 
   return (
@@ -32,9 +34,9 @@ const Users = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          height="100vh"
+          height="90vh"
         >
-          <img src={loadingGif} alt="gif" width="90%" height="800px" />
+          <img src={loadingGif} alt="gif" width="50%" height="400px" />
         </Box>
       )}
       {!loading &&

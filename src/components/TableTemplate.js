@@ -11,7 +11,7 @@ import TablePagination from '@mui/material/TablePagination';
 
 const TableTemplate = ({ exampleData }) => {
     const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(9);
+    const [rowsPerPage, setRowsPerPage] = React.useState(7);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -41,7 +41,7 @@ const TableTemplate = ({ exampleData }) => {
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
                                     {keys.map((cell, index) => {
-                                        if (cell === "Image") {
+                                        if (cell === "Picture") {
                                             return <TableCell key={index} component="th" scope="row">
                                                         <img src={row[cell]} alt="" style={{ height: "2rem", width: "2rem", borderRadius: "50%" }} />
                                                     </TableCell>
@@ -59,7 +59,7 @@ const TableTemplate = ({ exampleData }) => {
                 </Table>
             </TableContainer>
             <TablePagination
-                rowsPerPageOptions={[9, 25, 100]}
+                rowsPerPageOptions={[7, 25, 100]}
                 component="div"
                 count={exampleData.length}
                 rowsPerPage={rowsPerPage}

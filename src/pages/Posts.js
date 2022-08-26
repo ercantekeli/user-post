@@ -6,6 +6,7 @@ import TableTemplate from '../components/TableTemplate';
 import { getUserPost, clearUserPostList } from "../features/user-post/userPostSlice"
 import loadingGif from "../assets/loading.gif"
 import { Box } from '@mui/system';
+import "./PostsStyle.css"
 
 const Posts = () => {
   const dispatch = useDispatch();
@@ -28,13 +29,13 @@ const Posts = () => {
     <>
       {loading && (
         <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          height="100vh"
-        >
-          <img src={loadingGif} alt="gif" width="90%" height="800px" />
-        </Box>
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        height="90vh"
+      >
+        <img src={loadingGif} alt="gif" width="50%" height="400px" />
+      </Box>
       )}
       {!loading &&
         <>

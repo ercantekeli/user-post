@@ -30,15 +30,15 @@ export default function LogIn() {
   const [pwdError, setPwdError] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     if (validEmail.test(email)) {
       setEmailErr(false);
     }
     if (validPassword.test(password)) {
       setPwdError(false);
     }
-  },[email, password])
+  }, [email, password])
 
 
 
@@ -194,12 +194,11 @@ export default function LogIn() {
                   width: "24rem",
                   backgroundColor: "#FFFFFF",
                   borderRadius: "10px",
-                  // marginBottom: "1.2rem"
                 }}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              {emailErr && <p style={{ marginTop: 0, color: "red", fontSize:"0.8rem" }}>Your email is invalid. Sample format: example@example.com</p>}
+              {emailErr && <p style={{ marginTop: 0, color: "red", fontSize: "0.8rem" }}>Your email is invalid. Sample format: example@example.com</p>}
               <div
                 style={{
                   display: "flex",
@@ -244,7 +243,6 @@ export default function LogIn() {
                     width: "24rem",
                     backgroundColor: "#FFFFFF",
                     borderRadius: "4px",
-                    // marginBottom: "1.2rem"
                   }}
                   value={password}
                   placeholder="Password"
@@ -265,67 +263,70 @@ export default function LogIn() {
                   }
                 />
               </FormControl>
-              {pwdError && <p style={{ marginTop: 0, color: "red", fontSize:"0.8rem"}}>Password must contain both letters and numbers.(min 6 char)</p>}
+              {pwdError && <p style={{ marginTop: 0, color: "red", fontSize: "0.8rem" }}>Password must contain both letters and numbers.(min 6 char)</p>}
             </div>
-          <Button
-            fullWidth
-            size="large"
-            type="submit"
-            variant="contained"
-            sx={{
-              color: "#FFFFFF",
-              letterSpacing: "0.2px",
-              textAlign: "center",
-              lineHeight: "20px",
-              fontSize: "1rem",
-              fontWeight: "600",
-              fontStyle: "normal",
-              fontFamily: "Mulish",
-              textTransform: "capitalize",
-              height: "3.7rem",
-              boxShadow: "0px 4px 12px rgba(55, 81, 255, 0.24)",
-              borderRadius: "8px",
-              backgroundColor: "#3751FF",
-              marginTop: "1.3rem",
-              width: "24rem"
-            }}
-          >
-            Log In
-          </Button>
-          </Box>
-          <Stack direction="row" justifyContent="center" alignItems="baseline">
-            <Typography
+            <Button
+              fullWidth
+              size="large"
+              type="submit"
+              variant="contained"
               sx={{
-                letterSpacing: "0.3.px",
-                mt: "1.8rem",
-                mb: "2.2rem",
-                color: "#9FA2B4",
-                fontSize: "14px",
-                fontWeight: "400",
-                fontStyle: "normal",
+                color: "#FFFFFF",
+                letterSpacing: "0.2px",
+                textAlign: "center",
                 lineHeight: "20px",
-                fontFamily: "Mulish",
-              }}
-              variant="span"
-            >
-              Dont have an account?
-            </Typography>
-            <Typography
-              component={Link}
-              to=""
-              variant="span"
-              sx={{
-                textDecoration: "none",
-                color: "#3751FF",
+                fontSize: "1rem",
                 fontWeight: "600",
                 fontStyle: "normal",
                 fontFamily: "Mulish",
-                marginLeft: "5px",
+                textTransform: "capitalize",
+                height: "3.7rem",
+                boxShadow: "0px 4px 12px rgba(55, 81, 255, 0.24)",
+                borderRadius: "8px",
+                backgroundColor: "#3751FF",
+                marginTop: "1.3rem",
+                width: "24rem"
               }}
             >
-              Sign Up
-            </Typography>
-          </Stack>
+              Log In
+            </Button>
+          </Box>
+          <Box sx={{ display: "flex", justifyContent:"center", alignItems:"baseline"}}>
+            <Stack direction="row" justifyContent="center" alignItems="baseline">
+              <Typography
+                sx={{
+                  letterSpacing: "0.3.px",
+                  mt: "1.8rem",
+                  mb: "2.2rem",
+                  color: "#9FA2B4",
+                  fontSize: "14px",
+                  fontWeight: "400",
+                  fontStyle: "normal",
+                  lineHeight: "20px",
+                  fontFamily: "Mulish",
+                }}
+                variant="span"
+              >
+                Dont have an account?
+              </Typography>
+              <Typography
+                component={Link}
+                to=""
+                variant="span"
+                sx={{
+                  textDecoration: "none",
+                  color: "#3751FF",
+                  fontWeight: "600",
+                  fontStyle: "normal",
+                  fontFamily: "Mulish",
+                  marginLeft: "5px",
+                }}
+              >
+                Sign Up
+              </Typography>
+            </Stack>
+          </Box>
+
         </Box>
       </Container>
     </ThemeProvider>

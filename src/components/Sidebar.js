@@ -19,13 +19,14 @@ import { useNavigate } from "react-router-dom";
 import Logod from "../assets/sidebar/Logod.png"
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { ListItem, ListItemIcon } from "@mui/material";
 
 const drawerWidth = 240;
 
 export default function Sidebar() {
   const navigate = useNavigate()
   const button = {
-    height: "3.11rem",
+    height: "2.5rem",
     fontFamily: "Mulish",
     fontStyle: "normal",
     fontWeight: "400",
@@ -35,95 +36,144 @@ export default function Sidebar() {
     letterSpacing: "0.2px",
     color: "#a4a6b3",
     textTransform: "capitalize"
-}
-return (
-  <Box sx={{ display: "flex" }}>
-    <CssBaseline />
-    <Drawer
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: drawerWidth,
-          boxSizing: "border-box",
-          backgroundColor: "#363740",
-        },
-      }}
-      variant="permanent"
-      anchor="left"
-    >
-      <Toolbar
+  }
+  return (
+    <Box sx={{ display: "flex" }}>
+      <CssBaseline />
+      <Drawer
         sx={{
-          marginBottom: "3.5rem",
-          marginTop: "2.27rem",
+          width: drawerWidth,
+          flexShrink: 0,
+          "& .MuiDrawer-paper": {
+            width: drawerWidth,
+            boxSizing: "border-box",
+            backgroundColor: "#363740",
+          },
         }}
+        variant="permanent"
+        anchor="left"
       >
-        <img src={Logod} alt="logo" style={{height:"2rem", width:"2rem"}}/>
-        <span
-          style={{
-            marginLeft: "1.2rem",
-            fontFamily: "Mulish",
-            fontStyle: "normal",
-            fontWeight: "700",
-            fontSize: "18px",
-            lineHeight: "24px",
-            color: "#A4A6B3",
-            opacity: "0.7",
+        <Toolbar
+          sx={{
+            marginBottom: "1rem",
+            marginTop: "1rem",
           }}
         >
-          Dashboard Kit
-        </span>
-      </Toolbar>
-      <List>
-        <Stack>
-          <Button style={button} className="button" fullWidth variant="text" onClick={()=> navigate("/users")}>
-            <Ologo />
-            <span style={{ marginLeft: "1.2rem" }}>Users</span>
-          </Button>
-          <Button style={button} className="button" fullWidth variant="text" onClick={()=> navigate("/posts")}>
-            <Ticket />
-            <span style={{ marginLeft: "1.2rem" }}>Posts</span>
-          </Button>
-          <Button style={button} className="button" fullWidth variant="text">
-            <Ideas />
-            <span style={{ marginLeft: "1.2rem" }}>Ideas</span>
-          </Button>
-          <Button style={button} className="button" fullWidth variant="text">
-            <Contacts />
-            <span style={{ marginLeft: "1.2rem" }}>Contacts</span>
-          </Button>
-          <Button style={button} className="button" fullWidth variant="text">
-            <Agents />
-            <span style={{ marginLeft: "1.2rem" }}>Agents</span>
-          </Button>
-          <Button style={button} className="button" fullWidth variant="text">
-            <Articles />
-            <span style={{ marginLeft: "1.2rem" }}>Articles</span>
-          </Button>
-        </Stack>
-      </List>
-      <Divider sx={{ border: "1px solid #DFE0EB" }} />
-      <List>
-        <Stack>
-          <Button style={button} className="button" fullWidth variant="text">
-            <Settings />
-            <span style={{ marginLeft: "1.2rem" }}>Settings</span>
-          </Button>
-          <Button style={button} className="button" fullWidth variant="text">
-            <Subscription />
-            <span style={{ marginLeft: "1.2rem" }}>Subscription</span>
-          </Button>
-          <Button style={button} className="button" fullWidth variant="text" onClick={()=>(window.location.href ="https://github.com/ercantekeli")}>
-            <GitHubIcon sx={{width:"1rem", height:"1rem"}}/>
-            <span style={{ marginLeft: "1.2rem" }}>Github</span>
-          </Button>
-          <Button style={button} className="button" fullWidth variant="text" onClick={()=>(window.location.href ="https://www.linkedin.com/in/ercantekeli/")}>
-            <LinkedInIcon sx={{width:"1rem", height:"1rem"}}/>
-            <span style={{ marginLeft: "1.2rem" }}>Linkedin</span>
-          </Button>
-        </Stack>
-      </List>
-    </Drawer>
-  </Box>
-);
+          <img src={Logod} alt="logo" style={{ height: "2rem", width: "2rem" }} />
+          <span
+            style={{
+              marginLeft: "1.2rem",
+              fontFamily: "Mulish",
+              fontStyle: "normal",
+              fontWeight: "700",
+              fontSize: "18px",
+              lineHeight: "24px",
+              color: "#A4A6B3",
+              opacity: "0.7",
+            }}
+          >
+            Dashboard Kit
+          </span>
+        </Toolbar>
+        <List>
+          <Stack>
+            <ListItem>
+              <Button style={button} className="button" fullWidth variant="text" onClick={() => navigate("/users")}>
+                <ListItemIcon>
+                  <Ologo />
+                </ListItemIcon>
+                Users
+              </Button>
+            </ListItem>
+
+            <ListItem>
+              <Button style={button} className="button" fullWidth variant="text" onClick={() => navigate("/posts")}>
+                <ListItemIcon>
+                  <Ticket />
+                </ListItemIcon>
+                Posts
+              </Button>
+            </ListItem>
+
+            <ListItem>
+              <Button style={button} className="button" fullWidth variant="text">
+                <ListItemIcon>
+                  <Ideas />
+                </ListItemIcon>
+                Ideas
+              </Button>
+            </ListItem>
+
+            <ListItem>
+              <Button style={button} className="button" fullWidth variant="text">
+                <ListItemIcon>
+                  <Contacts />
+                </ListItemIcon>
+                Contacts
+              </Button>
+            </ListItem>
+
+            <ListItem>
+              <Button style={button} className="button" fullWidth variant="text">
+                <ListItemIcon>
+                  <Agents />
+                </ListItemIcon>
+                Agents
+              </Button>
+            </ListItem>
+
+            <ListItem>
+              <Button style={button} className="button" fullWidth variant="text">
+                <ListItemIcon>
+                  <Articles />
+                </ListItemIcon>
+                Articles
+              </Button>
+            </ListItem>
+          </Stack>
+        </List>
+        <Divider sx={{ border: "1px solid #DFE0EB" }} />
+        <List>
+          <Stack>
+            <ListItem>
+              <Button style={button} className="button" fullWidth variant="text">
+                <ListItemIcon>
+                  <Settings />
+                </ListItemIcon>
+                Settings
+              </Button>
+            </ListItem>
+
+            <ListItem>
+              <Button style={button} className="button" fullWidth variant="text">
+                <ListItemIcon>
+                  <Subscription />
+                </ListItemIcon>
+                Subscription
+              </Button>
+            </ListItem>
+
+            <ListItem>
+              <Button style={button} className="button" fullWidth variant="text" onClick={() => (window.location.href = "https://github.com/ercantekeli")}>
+                <ListItemIcon>
+                  <GitHubIcon sx={{ width: "1rem", height: "1rem", color:"#606471" }} />
+                </ListItemIcon>
+                Github
+              </Button>
+            </ListItem>
+
+            <ListItem>
+              <Button style={button} className="button" fullWidth variant="text" onClick={() => (window.location.href = "https://www.linkedin.com/in/ercantekeli/")}>
+                <ListItemIcon>
+                  <LinkedInIcon sx={{ width: "1rem", height: "1rem", color:"#606471"}} />
+                </ListItemIcon>
+                Linkedin
+              </Button>
+            </ListItem>
+
+          </Stack>
+        </List>
+      </Drawer>
+    </Box>
+  );
 }

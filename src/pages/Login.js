@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from '../features/auth/authSlice';
 import { validEmail, validPassword } from '../utils/Regex';
-import "./loginStyle.css"
+import "./LoginStyle.css"
 
 
 

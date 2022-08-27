@@ -17,8 +17,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from '../features/auth/authSlice';
-import "./LoginStyle.css"
 import { validEmail, validPassword } from '../utils/Regex';
+import "./loginStyle.css"
 
 
 
@@ -79,7 +79,7 @@ export default function LogIn() {
   const themeDark = createTheme({
     palette: {
       background: {
-        default: "#222222",
+        default: "#363740",
       }
     },
   })

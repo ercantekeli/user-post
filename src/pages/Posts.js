@@ -6,7 +6,6 @@ import TableTemplate from '../components/TableTemplate';
 import { getUserPost, clearUserPostList } from "../features/user-post/userPostSlice"
 import loadingGif from "../assets/loading.gif"
 import { Box } from '@mui/system';
-import "./PostsStyle.css"
 
 const Posts = () => {
   const dispatch = useDispatch();

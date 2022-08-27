@@ -6,7 +6,6 @@ import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import loadingGif from "../assets/loading.gif"
 import { Box } from '@mui/system';
-import "./UsersStyle.css"
 
 const Users = () => {
   const dispatch = useDispatch();

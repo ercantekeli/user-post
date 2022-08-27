@@ -154,7 +154,7 @@ export default function Sidebar() {
             </ListItem>
 
             <ListItem>
-              <Button style={button} className="button" fullWidth variant="text" onClick={() => (window.location.href = "https://github.com/ercantekeli")}>
+              <Button style={button} className="button" fullWidth variant="text" onClick={() => (window.open("https://github.com/ercantekeli"))}>
                 <ListItemIcon>
                   <GitHubIcon sx={{ width: "1rem", height: "1rem", color:"#606471" }} />
                 </ListItemIcon>
@@ -163,8 +163,8 @@ export default function Sidebar() {
             </ListItem>
 
             <ListItem>
-              <Button style={button} className="button" fullWidth variant="text" onClick={() => (window.location.href = "https://www.linkedin.com/in/ercantekeli/")}>
-                <ListItemIcon>
+              <Button style={button} className="button" fullWidth variant="text" onClick={() => (window.open("https://www.linkedin.com/in/ercantekeli/"))}>
+                <ListItemIcon target="_blank">
                   <LinkedInIcon sx={{ width: "1rem", height: "1rem", color:"#606471"}} />
                 </ListItemIcon>
                 Linkedin
